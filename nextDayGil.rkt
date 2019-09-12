@@ -1,9 +1,6 @@
 #|
     Find the next day from a given date 
     Gil's solution
-
-    Alejandra Tubilla Castellanos
-    A01022960
 |#
 
 
@@ -15,6 +12,12 @@
                 (= (remainder year 400)))
     #t
     #f)
+)
+(define (month-days month year)
+    (case month 
+    [(1 3 5 7 8 10 12) 31]
+    [(4 6 9 11) 30]
+    [(2)(if (leap? year) 29 28)])
 )
 
 (define (next-day date)
